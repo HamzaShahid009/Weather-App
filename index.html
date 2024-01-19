@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="shortcut icon" href="./assets/images/favion.png" type="image/x-icon">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+  <div class="preloader__wrapper">
+    <div class="preloader"><span></span></div>
+    <div class="preloader__section preloader__section--left"></div>
+    <div class="preloader__section preloader__section--right"></div>
+  </div>
+
+  <h1>Type in the city to find the weather</h1>
+
+  <div class="box">
+
+    <form id="cityName" method="get">
+      <!-- autocomplete="off" -->
+      <input type="search" name="city" placeholder="Enter City" autocomplete="off" required>
+      <button type="submit"><i class="bi bi-search"></i></button>
+    </form>
+
+    <div id="loading"></div>
+
+    <div class="weather loading">
+      <h2 class="city">Weather in Dummy City</h2>
+      <h3 class="temp">25.02°C</h1>
+        <div style="display: flex; align-items: center;">
+          <img src="https://openweathermap.org/img/wn/04n.png" alt="" class="icon" loading="lazy" />
+          <div class="description">Cloudy</div>
+        </div>
+        <div class="humidity">Humidity: 91%</div>
+        <div class="wind">Wind speed: 63.05 km/h</div>
+    </div>
+    <a target="_blank" class="git_link" rel="noopener noreferrer" href="https://github.com/HamzaShahid009">
+      <i class="bi bi-github"></i>
+    </a>
+
+  </div>
+
+  <!--Vanilla tilt.js Library Refer- https://micku7zu.github.io/vanilla-tilt.js/ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+  <script>
+    VanillaTilt.init(document.querySelectorAll(".box"), {
+      max: 4,
+      speed: 800,
+      scale: 1.03,
+      glare: true,
+      "max-glare": 0.5,
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="./assets/app.js"></script>
+</body>
+
+</html>
